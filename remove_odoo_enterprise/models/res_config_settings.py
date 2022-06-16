@@ -19,7 +19,7 @@ class ResConfigSettings(models.TransientModel):
         )
 
         page_name = ret_val["name"]
-        if not page_name == "res.config.settings.view.form":
+        if not page_name.startswith("res.config.settings.view.form"):
             return ret_val
 
         doc = etree.XML(ret_val["arch"])
